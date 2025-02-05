@@ -6,6 +6,7 @@ function login() {
     const correctPassword = 'animal123';
 
     if (password === correctPassword) {
+        sessionStorage.setItem('loggedIn', 'true');
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('navbar').style.display = 'block';
         document.getElementById('content').style.display = 'block';
@@ -13,3 +14,11 @@ function login() {
         loginMessage.textContent = 'Incorrect password. Please try again.';
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('navbar').style.display = 'block';
+        document.getElementById('content').style.display = 'block';
+    }
+});
