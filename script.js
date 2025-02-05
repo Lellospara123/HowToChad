@@ -1,4 +1,4 @@
-const BASE_URL = 'https://abcd1234.ngrok.io'; // Sostituisci con il tuo URL ngrok
+const BASE_URL = 'http://localhost:3000'; // Assicurati che questo sia l'URL del tuo server Node.js
 
 // Funzione per gestire l'invio delle richieste
 async function submitRequest() {
