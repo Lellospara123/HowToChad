@@ -1,44 +1,60 @@
 // Function to handle user signup
-function signup() {
+async function signup() {
     const username = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
     const signupMessage = document.getElementById('signup-message');
 
     if (username && password) {
-        // Save user data to a file (simulated here with localStorage for simplicity)
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-        users.push({ username, password });
-        localStorage.setItem('users', JSON.stringify(users));
+        try {
+            const response = await fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const message = await response.text();
+            signupMessage.textContent = message;
 
-        signupMessage.textContent = 'Signup successful! Redirecting to login page...';
-        
-        // Redirect to login page after a short delay
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 2000);
+            if (response.ok) {
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
+        } catch (error) {
+            signupMessage.textContent = 'Error during signup. Please try again.';
+        }
     } else {
         signupMessage.textContent = 'Please enter both username and password.';
     }
 }
 
 // Function to handle user login
-function login() {
+async function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const loginMessage = document.getElementById('login-message');
 
-    // Retrieve user data from a file (simulated here with localStorage for simplicity)
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(user => user.username === username && user.password === password);
+    if (username && password) {
+        try {
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const message = await response.text();
+            loginMessage.textContent = message;
 
-    if (user) {
-        sessionStorage.setItem('loggedIn', 'true');
-        sessionStorage.setItem('username', username);
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('navbar').style.display = 'block';
-        document.getElementById('content').style.display = 'block';
+            if (response.ok) {
+                sessionStorage.setItem('loggedIn', 'true');
+                sessionStorage.setItem('username', username);
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('navbar').style.display = 'block';
+                document.getElementById('content').style.display = 'block';
+            }
+        } catch (error) {
+            loginMessage.textContent = 'Error during login. Please try again.';
+        }
     } else {
-        loginMessage.textContent = 'Incorrect username or password. Please try again.';
+        loginMessage.textContent = 'Please enter both username and password.';
     }
 }
 
