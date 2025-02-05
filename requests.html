@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header id="navbar">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="species.html">Pjard Lucrinidi</a></li>
                 <li><a href="requests.html">Requests</a></li>
@@ -20,7 +21,13 @@
 
     <main>
         <h1>Requests</h1>
-        <p>This page allows users to request more information or services related to the project.</p>
+        <form id="request-form">
+            <textarea id="request-text" placeholder="Enter your request here..."></textarea>
+            <button type="submit" style="background-color: #007bff; color: white;">Submit</button>
+        </form>
+        <div id="response-message"></div>
     </main>
+
+    <script src="requests.js"></script>
 </body>
 </html>
