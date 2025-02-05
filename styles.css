@@ -7,8 +7,6 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
 }
 
@@ -16,6 +14,9 @@ header {
     background-color: #222;
     padding: 10px 0;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -33,6 +34,13 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 4px;
 }
 
 #login-container, #signup-container {
@@ -42,7 +50,7 @@ nav ul li a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 300px;
-    margin: auto;
+    margin: 50px auto;
 }
 
 #logo {
@@ -55,6 +63,7 @@ nav ul li a {
     margin: 20px;
     width: 80%;
     max-width: 800px;
+    margin: auto; /* Center the content */
 }
 
 .info-section {
@@ -68,6 +77,7 @@ nav ul li a {
 .info-section p {
     width: 40%;
     min-width: 200px;
+    margin: 10px;
 }
 
 .info-section img {
@@ -75,6 +85,7 @@ nav ul li a {
     min-width: 200px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
 }
 
 .profile-photo {
