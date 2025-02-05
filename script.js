@@ -10,7 +10,12 @@ function signup() {
         users.push({ username, password });
         localStorage.setItem('users', JSON.stringify(users));
 
-        signupMessage.textContent = 'Signup successful! You can now login.';
+        signupMessage.textContent = 'Signup successful! Redirecting to login page...';
+        
+        // Redirect to login page after a short delay
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 2000);
     } else {
         signupMessage.textContent = 'Please enter both username and password.';
     }
