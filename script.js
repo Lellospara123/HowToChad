@@ -3,12 +3,13 @@ function login() {
     const loginMessage = document.getElementById('login-message');
 
     // Define the correct password
-    const correctPassword = 'ImperoLVC888';
+    const correctPassword = 'animal123';
 
     if (password === correctPassword) {
         document.getElementById('login-container').style.display = 'none';
+        document.getElementById('navbar').style.display = 'block';
         document.getElementById('content').style.display = 'block';
     } else {
-        loginMessage.textContent = 'Hai scacato la password, riprova. Se non la sai, vavattenne';
+        loginMessage.textContent = 'Incorrect password. Please try again.';
     }
 }
