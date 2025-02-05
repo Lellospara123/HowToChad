@@ -14,7 +14,7 @@ header {
     background-color: #222;
     padding: 10px 0;
     width: 100%;
-    position: sticky;
+    position: fixed; /* Keep the navbar fixed at the top */
     top: 0;
     z-index: 1000;
 }
@@ -43,6 +43,15 @@ nav ul li a:hover {
     border-radius: 4px;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px; /* Add padding to account for the fixed navbar */
+}
+
 #login-container, #signup-container {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -50,7 +59,7 @@ nav ul li a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 300px;
-    margin: 50px auto;
+    margin: 20px;
 }
 
 #logo {
@@ -63,7 +72,6 @@ nav ul li a:hover {
     margin: 20px;
     width: 80%;
     max-width: 800px;
-    margin: auto; /* Center the content */
 }
 
 .info-section {
@@ -147,3 +155,4 @@ body::before {
 body::after {
     right: 0;
 }
+
