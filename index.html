@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Species Information</title>
+    <title>Login - Impero Lucrinese</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="navbar" style="display: none;">
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="species.html">Pjard Lucrinidi</a></li>
-                <li><a href="requests.html">Requests</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <main>
         <div id="login-container">
             <img src="logo.png" alt="Logo" id="logo">
             <h2>Login</h2>
+            <input type="text" id="username" placeholder="Enter username">
             <input type="password" id="password" placeholder="Enter password">
             <button onclick="login()">Login</button>
             <p id="login-message"></p>
+            <p>Don't have an account? <a href="signup.html">Signup here</a></p>
         </div>
 
         <div id="content" style="display: none;">
