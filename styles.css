@@ -6,11 +6,17 @@ body {
     background-size: cover;
     color: #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 header {
     background-color: #222;
     padding: 10px 0;
+    width: 100%;
 }
 
 nav ul {
@@ -30,7 +36,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-#login-container {
+#login-container, #signup-container {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 8px;
@@ -38,17 +44,18 @@ nav ul li a {
     text-align: center;
     width: 300px;
     margin: auto;
-    margin-top: 100px;
 }
 
 #logo {
-    width: 200px;
+    width: 250px;
     margin-bottom: 20px;
 }
 
 #content {
     text-align: center;
     margin: 20px;
+    width: 80%;
+    max-width: 800px;
 }
 
 .info-section {
@@ -56,14 +63,17 @@ nav ul li a {
     align-items: center;
     justify-content: space-around;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .info-section p {
     width: 40%;
+    min-width: 200px;
 }
 
 .info-section img {
     width: 40%;
+    min-width: 200px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -74,7 +84,7 @@ nav ul li a {
     margin: 20px 0;
 }
 
-input[type="password"] {
+input[type="text"], input[type="password"], textarea {
     margin: 10px;
     padding: 10px;
     width: 80%;
@@ -95,21 +105,35 @@ button:hover {
     background-color: #0056b3;
 }
 
-#login-message {
+#login-message, #signup-message {
     color: red;
     margin-top: 10px;
 }
 
 textarea {
-    width: 80%;
     height: 100px;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
     resize: none;
 }
 
 form {
     text-align: center;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: url('decor.png') no-repeat center center;
+    background-size: contain;
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
 }
