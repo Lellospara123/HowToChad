@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requests</title>
+    <title>Requests - Impero Lucrinese</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,14 +19,14 @@
     </header>
 
     <main>
-        <h1>Requests</h1>
-        <form id="request-form">
-            <textarea id="request-text" placeholder="Enter your request here..."></textarea>
-            <button type="submit" style="background-color: #007bff; color: white;">Submit</button>
-        </form>
-        <div id="response-message"></div>
+        <div id="request-container">
+            <h2>Submit a Request</h2>
+            <textarea id="request-text" placeholder="Enter your request"></textarea>
+            <button onclick="submitRequest()">Submit Request</button>
+            <p id="request-message"></p>
+        </div>
     </main>
 
-    <script src="requests.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
